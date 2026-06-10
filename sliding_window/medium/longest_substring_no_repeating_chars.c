@@ -1,8 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 /*
+ * Problem:
+ * Given a string s, find the length of the longest substring without duplicate
+ * characters.
+ *
+ * Solution:
  * In this problem we need to find the length of the longest substring
  * without duplicates. We have:
  * - A string as input = sequence of characters
@@ -40,15 +41,17 @@
  *  - After each step, compute the window length and the maximum length found
  *    until that moment.
  *
- * Space complexity -> O(1)
- * Time complexity -> O(n)    (each char enters and leaves the window)
- *
+ * Space complexity: O(1)
+ * Time complexity: O(n)    (each char enters and leaves the window)
  */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 int lengthOfLongestSubstring(char *s)
 {
     int left = 0, maxlen = 0, right, winsize;
-    int seen[255] = {0};
+    int seen[256] = {0};
 
     for (right = 0; s[right] != '\0'; right++) {
         seen[s[right]]++;
