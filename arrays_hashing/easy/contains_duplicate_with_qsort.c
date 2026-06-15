@@ -11,6 +11,8 @@
  * Time complexity: O(n * log n)
  * Space complexity: O(1)
  */
+#include <stdlib.h>
+#include <stdbool.h>
 
 int compare(const void *num1, const void *num2) {
     int a = *(int *)num1;
